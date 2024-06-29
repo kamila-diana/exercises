@@ -21,4 +21,3 @@ if __name__ == "__main__":
     nums_2 = [3, 4, 5, 7]
     assert contains_duplicate_2(nums_1)
     assert not contains_duplicate_2(nums_2)
-    print("OK")

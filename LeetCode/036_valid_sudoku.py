@@ -21,7 +21,6 @@ def isValidSudoku(board: list[list[str]]) -> bool:
             for n in range(3):
                 for m in range(3):
                     square.append(board[3*i + n][3*j + m])
-            print(square)
             numbers = only_numbers(square)
             if len(numbers) != len(set(numbers)):
                 return False

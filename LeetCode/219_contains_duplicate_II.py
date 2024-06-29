@@ -14,8 +14,6 @@ def contains_duplicate_ii(nums: list[int], k: int) -> bool:
 if __name__ == "__main__":
     nums_1 = [1, 2, 2]
     nums_2 = [3, 4, 5, 7]
-    # contains_duplicate_ii_2(nums_2, 2)
     assert contains_duplicate_ii(nums_1, 2)
     assert not contains_duplicate_ii(nums_2, 2)
-    print("OK")
 

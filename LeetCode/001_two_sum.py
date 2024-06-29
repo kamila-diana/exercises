@@ -12,4 +12,3 @@ def two_sum(nums: list[int], target: int) -> list[int]:
 if __name__ == "__main__":
     assert two_sum([1, 2, 6, 9], 7) == [0, 2]
     assert two_sum([1, 5, 4], 9) == [1, 2]
-    print("OK")

@@ -24,5 +24,4 @@ def group_anagrams_2(strs: list[str]) -> list[list[str]]:
 
 if __name__ == "__main__":
     assert group_anagrams_2(["abc"]) == [["abc"]]
-    print(group_anagrams_2(["ab", "ba", "aba", "baa", "aab"]))
-    print("OK")
+    assert group_anagrams_2(["ab", "ba", "aba", "baa", "aab"]) == [['ab', 'ba'], ['aba', 'baa', 'aab']]

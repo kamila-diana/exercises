@@ -50,4 +50,3 @@ def maximize_it():
 
 if __name__ == '__main__':
     test_just_maximize_it()
-    # print(parse_maximize_it_input())

@@ -17,5 +17,4 @@ def longest_consecutive(nums: list[int]) -> int:
 
 if __name__ == "__main__":
     nums = [4, 1, 3, 2, 8, 10, 9, 5, 6, 7]
-    result = longest_consecutive(nums)
-    print(result)
+    assert longest_consecutive(nums) == 10

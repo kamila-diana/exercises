@@ -21,7 +21,4 @@ def top_k_frequent_2(nums: list[int], k: int) -> list[int]:
 
 if __name__ == "__main__":
     a = [1, 2, 2, 3, 4, 4, 4]
-    # a = [-1,-1]
-    x = top_k_frequent_2(a, 2)
-    print(x)
-    print("OK")
+    assert top_k_frequent_2(a, 2) == [4, 2]

@@ -27,5 +27,4 @@ def product_except_self_2(nums: list[int]) -> list[int]:
 
 if __name__ == "__main__":
     example = [2, 3, 5, 7]
-    print(product_except_self_2(example))
-    print("OK")
+    assert product_except_self_2(example) == [105, 70, 42, 30]

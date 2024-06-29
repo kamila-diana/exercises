@@ -27,4 +27,3 @@ if __name__ == "__main__":
     c = "kamala"
     assert is_anagram_1(a, b)
     assert not is_anagram_1(a, c)
-    print("OK")
