@@ -1,39 +1,42 @@
 # LeetCode 424. Longest Repeating Character Replacement
-from collections import defaultdict
+from string import ascii_uppercase
 
 
-# def number_of_other_chars(curr_letters):
-#     max_value = 0
-#     all_sum = 0
-#     for key, value in curr_letters.items():
-#         all_sum += value
-#         max_value = max(value, max_value)
-#     return all_sum - max_value
-#
+def for_given_letter(letter: str, s: str, k: int):
+    s_len = len(s)
+    longest = 1
+    counter = 0
+    j = 0
+    for i in range(0, s_len):
+        while counter <= k and j < s_len:
+            j = max(j, i)
+            if s[j] != letter:
+                counter += 1
+            if counter <= k:
+                longest = max(j - i + 1, longest)
+            j += 1
+        if s[i] != letter:
+            counter -= 1
+    return longest
+
 
 def characterReplacement(s: str, k: int) -> int:
-    def number_of_other_chars(curr_letters):
-        max_value = 0
-        all_sum = 0
-        for key, value in curr_letters.items():
-            all_sum += value
-            max_value = max(value, max_value)
-        return all_sum - max_value
-
-    curr_letters = defaultdict(lambda: 0)
-    start = 0
-    max_length = 0
-    for (end, letter) in enumerate(s):
-        if number_of_other_chars(curr_letters) < k:
-            end += 1
-            curr_letters[letter] += 1
-            max_length = max(max_length, end - start)
-        else:
-            curr_letters[s[start]] -= 1
-            start += 1
-    return max_length
+    s_len = len(s)
+    if s_len <= 1:
+        return s_len
+    else:
+        uppercase_letters = list(ascii_uppercase)
+        result = 0
+        for let in uppercase_letters:
+            result = max(result, for_given_letter(let, s, k))
+        return result
 
 
 if __name__ == "__main__":
-    a = "AABABBA"
-    print(characterReplacement(a, 1))
+    assert characterReplacement("AABABBA", 1) == 4
+    assert characterReplacement("ABAB", 2) == 4
+    assert characterReplacement("ABAA", 0) == 2
+    assert characterReplacement("AAAA", 0) == 4
+    assert characterReplacement("BAAA", 0) == 3
+    assert characterReplacement("BAAAB", 2) == 5
+    assert characterReplacement("AAAAA", 5) == 5
